@@ -1,3 +1,5 @@
+import Status from "./Status";
+
 const Table = ({ sat }) => {
   return (
       <table>
@@ -10,9 +12,14 @@ const Table = ({ sat }) => {
         </tr>
         </thead>
         <tbody>
-        <tr>
-          <td>Row Data TBD</td>
-        </tr>
+          {sat.map((satellite) => (
+            <tr key ={satellite.id}>
+              <td>{satellite.name}</td>
+              <td>{satellite.type}</td>
+              <td>{satellite.launchDate}</td>
+              <td>{status(satellite.operational)}</td>
+            </tr>
+          ))}
         </tbody>
       </table>
   );
