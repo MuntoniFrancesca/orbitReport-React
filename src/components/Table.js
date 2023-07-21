@@ -1,5 +1,3 @@
-import Status from "./Status";
-
 const Table = ({ sat }) => {
   return (
       <table>
@@ -17,7 +15,7 @@ const Table = ({ sat }) => {
               <td>{satellite.name}</td>
               <td>{satellite.type}</td>
               <td>{satellite.launchDate}</td>
-              <td>{status(satellite.operational)}</td>
+              <td>{satellite.operational === true ? "active" : "inactive"}</td>
             </tr>
           ))}
         </tbody>
